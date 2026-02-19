@@ -6,3 +6,5 @@
    ![swagger](screens/Mstroy2.png)
 3. Вызовы API: `/api/v1/items`, `/api/v1/items/{id}/children`, `/api/v1/items/{id}/parents`
    ![api](screens/Mstroy3.png)
+4. Swagger: документация эндпоинтов search, count, items, children, parents
+   ![swagger endpoints](screens/Mstroy5.png)
