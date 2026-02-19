@@ -1,6 +1,6 @@
 # Бариев Илья Ринатович, ПИ-212
 
-Репозиторий с выполненными тестовыми заданиями из подборки [Hexlet/ru-test-assignments](https://github.com/Hexlet/ru-test-assignments).
+
 
 ## Содержимое репозитория
 
