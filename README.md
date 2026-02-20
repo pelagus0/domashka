@@ -12,11 +12,11 @@
 
 | № | Направление | Компания | Задание | Ссылка |
 |---:|---|---|---|---|
-| 01 | backend | Bewise | Quiz questions API (FastAPI + PostgreSQL) | [01_backend_Bewise](01_backend_Bewise/) |
+| 01 | backend | Bewise | Quiz questions API (FastAPI + PostgreSQL) | [01_backend_Bewise](https://github.com/pelagus0/domashka/tree/bewise/01_backend_Bewise) |
 | 02 | backend | AppBooster | Experiments API (FastAPI + PostgreSQL) | [02_backend_AppBooster](https://github.com/pelagus0/domashka/tree/appbooster/02_backend_AppBooster) |
-| 03 | backend | Ivelum | Hacker News proxy (FastAPI + PostgreSQL) | [03_backend_Ivelum](03_backend_Ivelum/) |
-| 04 | backend | UpTrader | Tree menu Django app (Django + PostgreSQL) | [04_backend_UpTrader](04_backend_UpTrader/) |
-| 05 | backend | ООО МСтрой | TreeStore API (FastAPI + PostgreSQL) | [05_backend_MStroy](05_backend_MStroy/) |
-| 06 | analytics | WhoIsBlogger | SQL metrics + seed data (PostgreSQL) | [06_analytics_WhoIsBlogger](06_analytics_WhoIsBlogger/) |
-| 07 | analytics | Cian | Library SQL + written answers | [07_analytics_Cian](07_analytics_Cian/) |
-| 08 | analytics | Amazon | SQL + Python mini tasks | [08_analytics_Amazon](08_analytics_Amazon/) |
+| 03 | backend | Ivelum | Hacker News proxy (FastAPI + PostgreSQL) | [03_backend_Ivelum](https://github.com/pelagus0/domashka/tree/ivelum/03_backend_Ivelum) |
+| 04 | backend | UpTrader | Tree menu Django app (Django + PostgreSQL) | [04_backend_UpTrader](https://github.com/pelagus0/domashka/tree/uptrader/04_backend_UpTrader) |
+| 05 | backend | ООО МСтрой | TreeStore API (FastAPI + PostgreSQL) | [05_backend_MStroy](https://github.com/pelagus0/domashka/tree/mstroy/05_backend_MStroy) |
+| 06 | analytics | WhoIsBlogger | SQL metrics + seed data (PostgreSQL) | [06_analytics_WhoIsBlogger](https://github.com/pelagus0/domashka/tree/whoisblogger/06_analytics_WhoIsBlogger) |
+| 07 | analytics | Cian | Library SQL + written answers | [07_analytics_Cian](https://github.com/pelagus0/domashka/tree/cian/07_analytics_Cian) |
+| 08 | analytics | Amazon | SQL + Python mini tasks | [08_analytics_Amazon](https://github.com/pelagus0/domashka/tree/amazon/08_analytics_Amazon) |
