@@ -1,2 +1,0 @@
-"""MStroy TreeStore service."""
-

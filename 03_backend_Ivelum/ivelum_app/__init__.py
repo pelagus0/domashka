@@ -1,2 +1,0 @@
-"""Ivelum Hacker News proxy."""
-
