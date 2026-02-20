@@ -8,7 +8,7 @@
 
 | № | Направление | Компания | Задание | Ссылка |
 |---:|---|---|---|---|
-| 01 | backend | Bewise | Quiz questions API (FastAPI + PostgreSQL) | [01_backend_Bewise]([(https://github.com/pelagus0/domashka/tree/bewise/01_backend_Bewise)]) |
+| 01 | backend | Bewise | Quiz questions API (FastAPI + PostgreSQL) | [01_backend_Bewise]([https://github.com/pelagus0/domashka/tree/bewise/01_backend_Bewise]) |
 | 02 | backend | AppBooster | Experiments API (FastAPI + PostgreSQL) | [02_backend_AppBooster](02_backend_AppBooster/) |
 | 03 | backend | Ivelum | Hacker News proxy (FastAPI + PostgreSQL) | [03_backend_Ivelum](03_backend_Ivelum/) |
 | 04 | backend | UpTrader | Tree menu Django app (Django + PostgreSQL) | [04_backend_UpTrader](04_backend_UpTrader/) |
