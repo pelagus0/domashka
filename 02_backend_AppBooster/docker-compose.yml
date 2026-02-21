@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: appbooster
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - appbooster_pg_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/appbooster
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+
+volumes:
+  appbooster_pg_data:
+
