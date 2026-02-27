@@ -1,98 +1,131 @@
-# Инструкция: перенос на GitHub
+# Ветки и GitHub
 
-## 1. Создание репозитория
+## Правило
 
-1. Зайдите на [GitHub](https://github.com) → New repository
-2. Название: `domashka` или `ru-test-assignments`
-3. Создайте репозиторий **без** README, .gitignore, license (у вас уже есть файлы)
+- **main** — в ветке только **README.md** (ФИО, группа, таблица заданий со ссылками).
+- **8 веток** — каждая ветка = одна папка с заданием. Имена веток короткие.
 
-## 2. Инициализация Git и первый коммит
+## Соответствие: папка → ветка
+
+| Папка | Ветка |
+|-------|--------|
+| `01_backend_Bewise` | **bewise** |
+| `02_backend_AppBooster` | **appbooster** |
+| `03_backend_Ivelum` | **ivelum** |
+| `04_backend_UpTrader` | **uptrader** |
+| `05_backend_MStroy` | **mstroy** |
+| `06_analytics_WhoIsBlogger` | **whoisblogger** |
+| `07_analytics_Cian` | **cian** |
+| `08_analytics_Amazon` | **amazon** |
+
+---
+
+## Как сделать 8 веток (один раз)
+
+В корне репозитория (`C:\Users\rifer\PycharmProjects\domashka`) выполните:
 
 ```powershell
-cd C:\Users\rifer\PycharmProjects\domashka
-git init
-git add .
-git commit -m "Initial commit: все 8 заданий"
-git branch -M main
-git remote add origin https://github.com/ВАШ_ЛОГИН/domashka.git
-git push -u origin main
+.\scripts\create-branches.ps1
 ```
 
-## 3. Ветки по заданиям (PR 1, 2, 3)
+Скрипт:
 
-Для заданий 1, 2, 3 — отдельные ветки и PR:
+1. Переключается на **main**.
+2. Удаляет из индекса все 8 папок заданий (в main остаётся только README) и делает коммит.
+3. Для каждой папки создаёт ветку с коротким именем, добавляет в неё только **README.md** и **эту папку**, коммитит.
+
+После этого запушьте ветки на GitHub:
 
 ```powershell
-# Ветка для задания 01
-git checkout -b 01_backend_Bewise
-git add 01_backend_Bewise/
-git add README.md
-git commit -m "Задание 01: Bewise Quiz API"
-git push -u origin 01_backend_Bewise
-
-# Вернуться на main и создать ветку для 02
-git checkout main
-git checkout -b 02_backend_AppBooster
-git add 02_backend_AppBooster/
-git add README.md
-git commit -m "Задание 02: AppBooster Experiments API"
-git push -u origin 02_backend_AppBooster
-
-# Задание 03
-git checkout main
-git checkout -b 03_backend_Ivelum
-git add 03_backend_Ivelum/
-git add README.md
-git commit -m "Задание 03: Ivelum Hacker News proxy"
-git push -u origin 03_backend_Ivelum
+git push -u origin bewise appbooster ivelum uptrader mstroy whoisblogger cian amazon
 ```
 
-## 4. Создание Pull Request
-
-1. На GitHub откройте репозиторий
-2. Появится баннер «Compare & pull request» для каждой запушенной ветки
-3. Или: Branches → выбрать ветку → «New pull request»
-4. Создайте PR из `01_backend_Bewise` → `main`, `02_backend_AppBooster` → `main`, `03_backend_Ivelum` → `main`
-5. Названия веток будут видны в списке веток и в PR
-
-## 5. Главная ветка main
-
-На `main` остаётся только общий README.md с:
-- ФИО и группа
-- Таблица всех заданий (01–08) со ссылками на папки
-
-Задания 4–8 можно либо добавить в main, либо вынести в отдельные ветки по той же схеме.
-
-## 6. Проверка имён веток на GitHub
-
-- **Code** → выпадающий список **main** → там будут все ветки
-- **Branches** — полный список веток с именами
-- Названия веток (01_backend_Bewise, 02_backend_AppBooster и т.д.) отображаются везде
-
-## 7. Переключение между ветками
+Или по одной:
 
 ```powershell
-git checkout main              # на главную
-git checkout 01_backend_Bewise # на ветку задания 01
-git checkout 02_backend_AppBooster
-git branch                    # список локальных веток
-git branch -a                 # все ветки (включая remote)
+git push -u origin bewise
+git push -u origin appbooster
+# ...
 ```
 
-## 8. Если уже есть коммиты на main
+---
 
-И нужно оставить на main только README:
+## Если скрипт не запускается
+
+Сделайте то же вручную (из корня репозитория):
 
 ```powershell
-# Создать ветку со всеми файлами
-git checkout -b all-tasks
-git push -u origin all-tasks
-
-# Вернуться на main и оставить только README
 git checkout main
+
+# Убрать папки из main (оставить только README)
 git rm -r --cached 01_backend_Bewise 02_backend_AppBooster 03_backend_Ivelum 04_backend_UpTrader 05_backend_MStroy 06_analytics_WhoIsBlogger 07_analytics_Cian 08_analytics_Amazon
-git commit -m "Main: только README с ссылками на задания"
-git push
+git add README.md
+git commit -m "main: только README"
+
+# Ветка bewise = main + папка 01
+git checkout -b bewise
+git add README.md 01_backend_Bewise
+git commit -m "Задание: 01_backend_Bewise"
+git checkout main
+
+# Ветка appbooster = main + папка 02
+git checkout -b appbooster
+git add README.md 02_backend_AppBooster
+git commit -m "Задание: 02_backend_AppBooster"
+git checkout main
+
+# Аналогично для ivelum, uptrader, mstroy, whoisblogger, cian, amazon
+git checkout -b ivelum
+git add README.md 03_backend_Ivelum
+git commit -m "Задание: 03_backend_Ivelum"
+git checkout main
+
+git checkout -b uptrader
+git add README.md 04_backend_UpTrader
+git commit -m "Задание: 04_backend_UpTrader"
+git checkout main
+
+git checkout -b mstroy
+git add README.md 05_backend_MStroy
+git commit -m "Задание: 05_backend_MStroy"
+git checkout main
+
+git checkout -b whoisblogger
+git add README.md 06_analytics_WhoIsBlogger
+git commit -m "Задание: 06_analytics_WhoIsBlogger"
+git checkout main
+
+git checkout -b cian
+git add README.md 07_analytics_Cian
+git commit -m "Задание: 07_analytics_Cian"
+git checkout main
+
+git checkout -b amazon
+git add README.md 08_analytics_Amazon
+git commit -m "Задание: 08_analytics_Amazon"
+git checkout main
 ```
 
-Затем задания добавляются через PR из веток `01_backend_Bewise`, `02_backend_AppBooster` и т.д.
+---
+
+## Переключение между ветками
+
+```powershell
+git checkout main        # только README
+git checkout bewise      # README + 01_backend_Bewise
+git checkout appbooster  # README + 02_backend_AppBooster
+git branch               # список локальных веток
+```
+
+---
+
+## Pull Request на GitHub
+
+Для каждого задания создаётся отдельный PR:
+
+- **bewise** → main  
+- **appbooster** → main  
+- **ivelum** → main  
+- и т.д.
+
+В PR будет видно только добавление одной папки (и README, если он менялся).
