@@ -1,2 +1,2 @@
-"""Bewise quiz API package."""
+
 
